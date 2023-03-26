@@ -13,13 +13,13 @@ if [[ "$CURRENT_SSID" = "$SSID" ]]; then
     if ping -q -c 1 -W 1 8.8.8.8 >/dev/null; then
         echo "Connecting to $SSID"
     else
-        python ./selenium_auth.py
+        python ./src/selenium_auth.py
     fi
 
 else
     sudo macchanger -r en0 
     echo "Connecting to $SSID"
     networksetup -setairportnetwork en0 "$SSID"
-    python ./selenium_auth.py
+    python ./src/selenium_auth.py
 
 fi

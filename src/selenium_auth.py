@@ -12,6 +12,8 @@ password = os.getenv("PASSWORD")
 ssid = os.getenv("SSID")
 site = os.getenv("SITE")
 
+print(f"username {username}, password {password}, ssid {ssid}, site {site}," )
+
 # Enter your wifi username and password here
 #username = "enter your username"
 #password = "enter your password"
@@ -22,7 +24,7 @@ result = os.popen("/System/Library/PrivateFrameworks/Apple80211.framework/Versio
 if result == ssid:
         
     # Set up the browser driver (assuming you have already downloaded the driver and put it in your PATH)
-    driver = webdriver.Chrome(executable_path='./chromedriver')
+    driver = webdriver.Chrome(executable_path='./src/chromedriver')
 
     # Navigate to the login page
     driver.get(site)
